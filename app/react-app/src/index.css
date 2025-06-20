@@ -1,0 +1,83 @@
+html, body {
+  height: 100%;
+  background-color:#dbddf0;
+  margin: 0;
+}
+
+h1{
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+section{
+  display: flex;
+  justify-content: center;
+}
+
+fieldset.container{
+  width: 400px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.form-group{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-group label {
+  width: 100px;
+  text-align: left;
+}
+
+.form-group input{
+  flex: 1;
+}
+
+.form-group select{
+  flex: 1;
+  font-size: 1em;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+table{
+  margin: 40px auto;
+  border-collapse: collapse;
+}
+
+table th, table td{
+  text-align: center;
+  padding: 20px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button{
+  border-radius: 3px;
+}
+
+
