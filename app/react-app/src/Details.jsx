@@ -82,9 +82,9 @@ function Details(){
                     </div>
 
                     
-                    <div className="button-container">
-                        <button type="submit">Submit</button>
-                        <button type="button" onClick={handleCancel}>Cancel</button>
+                    <div className="button-container-3">
+                        <button type="submit" className="hover-sbt">Submit</button>
+                        <button type="button" onClick={handleCancel} className="hover-cncl">Cancel</button>
                     </div>
                 </fieldset>
             </section>

@@ -8,6 +8,7 @@ h1{
   text-align: center;
   margin-top: 20px;
   padding: 20px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 form {
@@ -44,6 +45,7 @@ fieldset.container{
 .form-group label {
   width: 100px;
   text-align: left;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .form-group input{
@@ -55,16 +57,6 @@ fieldset.container{
   flex: 1;
   font-size: 1em;
   background-color: #dbddf0;
-}
-
-.button-container{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.button-container button:hover{
-  background-color: #b9beea89;
 }
 
 table{
@@ -87,10 +79,11 @@ table th, table td{
 table th{
   font-weight: bold;
   box-shadow: inset 0 -2px 0 rgba(0,0,0,0.15);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
-tbody tr:hover {
-  background-color: #f9f9f9;
+tbody tr button:hover {
+  background-color: #ff0000;
 }
 
 thead tr:hover {
@@ -116,8 +109,40 @@ button{
   cursor: pointer;
 }
 
-button:hover{
-  background-color: #b9beea87;
+.button-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.button-container-3{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.hover-sbt{
+  border: 3px solid #333;
+  border-radius: 8px;
+  background-color: #dbddf0;
+  cursor: pointer;
+}
+
+.hover-sbt:hover{
+  background-color: rgb(199, 199, 44);
+  color: black;
+}
+
+.hover-cncl{
+  border: 3px solid #333;
+  border-radius: 8px;
+  background-color: #dbddf0;
+  cursor: pointer;
+}
+
+.hover-cncl:hover{
+  background-color: #ff0000;
+  color: black;
 }
 
 .button-container-2{
@@ -131,7 +156,7 @@ button:hover{
   }
 
 .button-container-2 button:hover{
-  background-color: #b9beea89;
+  background-color: rgb(0, 0, 255);
 }
 
 input[type="radio"]{
