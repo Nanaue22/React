@@ -38,47 +38,50 @@ function Table() {
         <>
             <div className="table-container">
                 <h1>All Entries</h1>
+                <div className="button-container-2">
+                    <button onClick={addDetails}>ADD</button>
+                </div>
                 <table border="1" cellPadding={10}>
                     <thead>
                         <tr>
                             <th>First Name
                                 <select onChange={(e)=>handleSortChange('fname', e.target.value)}>
-                                    <option value="">Sort</option>
+                                    <option value=""></option>
                                     <option value="asc">A-Z</option>
                                     <option value="dsc">Z-A</option>
                                 </select>
                             </th>
                             <th>Last Name
                                 <select onChange={(e)=>handleSortChange('lname', e.target.value)}>
-                                    <option value="">Sort</option>
+                                    <option value=""></option>
                                     <option value="asc">A-Z</option>
                                     <option value="dsc">Z-A</option>
                                 </select>
                             </th>
                             <th>Email
                                 <select onChange={(e)=>handleSortChange('email', e.target.value)}>
-                                    <option value="">Sort</option>
+                                    <option value=""></option>
                                     <option value="asc">A-Z</option>
                                     <option value="dsc">Z-A</option>
                                 </select>
                             </th>
                             <th>Phone number
                                 <select onChange={(e)=>handleSortChange('phno', e.target.value)}>
-                                    <option value="">Sort</option>
+                                    <option value=""></option>
                                     <option value="asc">A-Z</option>
                                     <option value="dsc">Z-A</option>
                                 </select>
                             </th>
                             <th>Gender
                                 <select onChange={(e)=>handleSortChange('gender', e.target.value)}>
-                                    <option value="">Sort</option>
+                                    <option value=""></option>
                                     <option value="asc">A-Z</option>
                                     <option value="dsc">Z-A</option>
                                 </select>
                             </th>
                             <th>Department
                                 <select onChange={(e)=>handleSortChange('dept', e.target.value)}>
-                                    <option value="">Sort</option>
+                                    <option value=""></option>
                                     <option value="asc">A-Z</option>
                                     <option value="dsc">Z-A</option>
                                 </select>
@@ -109,9 +112,7 @@ function Table() {
                         )}
                     </tbody>
                 </table>
-                
-                <div className="button-container">
-                    <button onClick={addDetails}>ADD</button>
+                <div>
                     <button onClick={clearData} disabled={formData === 0}>CLEAR TABLE</button>
                 </div>
             </div>
