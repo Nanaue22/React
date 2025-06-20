@@ -16,6 +16,11 @@ function Details(){
     const handleChange = (e) =>{
         setInput({...input, [e.target.name]: e.target.value});
     };
+
+    const handleCancel = (e)=> {
+        setEditIndex(null);
+        navigate('/');
+    };
     
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -79,6 +84,7 @@ function Details(){
                     
                     <div className="button-container">
                         <button type="submit">Submit</button>
+                        <button type="button" onClick={handleCancel}>Cancel</button>
                     </div>
                 </fieldset>
             </section>

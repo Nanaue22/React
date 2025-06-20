@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FormContext } from "./context/FormContext";
 
 function Table() {
@@ -16,6 +16,24 @@ function Table() {
     const addDetails = () =>{
         navigate("/Employee");
     };
+
+    const [sortConfig, setSortConfig] = useState({key:'', direction:''});
+
+    const sortedData = [...formData].sort((a, b)=>{
+        const {key, direction} = sortConfig;
+        if(!key) return 0;
+
+        const valA = a[key].toString().toLowerCase();
+        const valB = b[key].toString().toLowerCase();
+        if(valA<valB) return direction === 'asc'?-1:1;
+        if(valA>valB) return direction === 'asc'?1:-1;
+        return 0;
+    });
+
+    const handleSortChange = (key, direction)=>{
+        setSortConfig({key, direction});
+    };
+
     return(
         <>
             <div className="table-container">
@@ -23,12 +41,48 @@ function Table() {
                 <table border="1" cellPadding={10}>
                     <thead>
                         <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Phone number</th>
-                            <th>Gender</th>
-                            <th>Department</th>
+                            <th>First Name
+                                <select onChange={(e)=>handleSortChange('fname', e.target.value)}>
+                                    <option value="">Sort</option>
+                                    <option value="asc">A-Z</option>
+                                    <option value="dsc">Z-A</option>
+                                </select>
+                            </th>
+                            <th>Last Name
+                                <select onChange={(e)=>handleSortChange('lname', e.target.value)}>
+                                    <option value="">Sort</option>
+                                    <option value="asc">A-Z</option>
+                                    <option value="dsc">Z-A</option>
+                                </select>
+                            </th>
+                            <th>Email
+                                <select onChange={(e)=>handleSortChange('email', e.target.value)}>
+                                    <option value="">Sort</option>
+                                    <option value="asc">A-Z</option>
+                                    <option value="dsc">Z-A</option>
+                                </select>
+                            </th>
+                            <th>Phone number
+                                <select onChange={(e)=>handleSortChange('phno', e.target.value)}>
+                                    <option value="">Sort</option>
+                                    <option value="asc">A-Z</option>
+                                    <option value="dsc">Z-A</option>
+                                </select>
+                            </th>
+                            <th>Gender
+                                <select onChange={(e)=>handleSortChange('gender', e.target.value)}>
+                                    <option value="">Sort</option>
+                                    <option value="asc">A-Z</option>
+                                    <option value="dsc">Z-A</option>
+                                </select>
+                            </th>
+                            <th>Department
+                                <select onChange={(e)=>handleSortChange('dept', e.target.value)}>
+                                    <option value="">Sort</option>
+                                    <option value="asc">A-Z</option>
+                                    <option value="dsc">Z-A</option>
+                                </select>
+                            </th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -38,7 +92,7 @@ function Table() {
                                 <td colSpan='7' style={{textAlign: 'center'}}>No data entered yet.</td>
                             </tr>
                         ):(
-                            formData.map((entry, index)=>(
+                            sortedData.map((entry, index)=>(
                                 <tr key={index}>
                                     <td>{entry.fname}</td>
                                     <td>{entry.lname}</td>
